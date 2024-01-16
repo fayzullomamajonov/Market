@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="main-section">
+        <div class="container">
+            <h1 class="products-title">Categorys</h1>
+            <div class="category-items">
+                {% for category in categorys %}
+                <a class="category-items__link" href="{% url 'product' category.category %}">{{category | title}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

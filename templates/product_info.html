@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="main-section">
+        {% for product in product %}
+            <div class="product-info__items">
+                <div class="image-left">
+                    <img style="border: 2px solid #ccc; border-radius: 10px;" class="product-info__image" src="{{product.photo_image.url}}" alt="{{product.name}}">
+                </div>
+                <div class="info-right">
+                    <h1 class="product-name"><b>Name:</b> {{product.name}}</h1>
+                    <h5 class="product-model"><b>Model:</b> {{product.phone_model}}</h5>
+                    <p class="product-color"><b>Color:</b> {{ product.color }}</p>
+                    <p class="product-at_date"><b>At Date:</b> {{product.at_date | date:"D-m Y"}}</p>
+                </div>
+            </div>
+            <a class="category-items__link" href="{% url 'product' product.category %}"><< ortga</a>
+        {% endfor %}
+        
+    </div>
+</div>
+{% endblock %}

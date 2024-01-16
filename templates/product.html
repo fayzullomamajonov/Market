@@ -7,8 +7,9 @@
             <div class="services__cards">
                 {% for product in products %}
                 <div class="service-card">
+                    <a href="{% url 'product_info' product.pk %}">
                     <img src="{{ product.photo_image.url }}" alt="{{product.model}}">
-                    <a href="{% url 'product_info' product.pk %}">{{product.name | title}} ({{ product.phone_model }})</a>
+                    {{product.name | title}} ({{ product.phone_model }})</a>
                 </div>
                 {% endfor %}
                 
